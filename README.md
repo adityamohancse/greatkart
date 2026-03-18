@@ -62,8 +62,17 @@ python manage.py createsuperuser
 
 ## 📸 Screenshots
 
-(Add screenshots here later)
+### 🏠 Home Page
+![Home](screenshots/home.png)
 
+### 🛍️ Product Page
+![Product](screenshots/product.png)
+
+### 🛒 Cart Page
+![Cart](screenshots/cart.png)
+
+### 🧾 Billing Page
+![Billing](screenshots/billing.png)
 ---
 
 ## 🚀 Future Improvements
