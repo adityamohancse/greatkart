@@ -73,18 +73,19 @@ python manage.py createsuperuser
 </p>
 
 ### 🛒 Cart Page
-<p align="center">
-  <img src="greatkart/screenshots/cart.png" width="45%" style="margin:10px;"/>
-  <img src="greatkart/screenshots/cart2.png" width="45%" style="margin:10px;"/>
-</p>
+
+<div style="display: flex; overflow-x: auto; gap: 15px; padding: 10px;">
+  <img src="greatkart/screenshots/cart.png" height="250"/>
+  <img src="greatkart/screenshots/cart2.png" height="250"/>
+</div>
 
 ---
-
 ### 🧾 Billing Page
-<p align="center">
-  <img src="greatkart/screenshots/billing.png" width="45%" style="margin:10px;"/>
-  <img src="greatkart/screenshots/billing2.png" width="45%" style="margin:10px;"/>
-</p>>
+
+<div style="display: flex; overflow-x: auto; gap: 15px; padding: 10px;">
+  <img src="greatkart/screenshots/billing.png" height="250"/>
+  <img src="greatkart/screenshots/billing2.png" height="250"/>
+</div>
 
 ## 🚀 Future Improvements
 
