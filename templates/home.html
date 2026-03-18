@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ========================= HERO SECTION ========================= -->
+<section style="background: linear-gradient(135deg, #1a3c8f 0%, #2557d6 60%, #1a8fd1 100%); padding: 70px 0; position:relative; overflow:hidden;">
+
+  <!-- Background circles decoration -->
+  <div style="position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.05);"></div>
+  <div style="position:absolute;bottom:-80px;left:-40px;width:250px;height:250px;border-radius:50%;background:rgba(255,255,255,0.05);"></div>
+
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Hero Text -->
+      <div class="col-lg-6 col-md-6" style="color:white; z-index:1;">
+        <p style="color:#ffd700; font-weight:700; letter-spacing:3px; text-transform:uppercase; font-size:14px;">🛒 Welcome to GreatKart</p>
+        <h1 style="font-size:48px; font-weight:800; line-height:1.2; margin-bottom:20px;">
+          Shop the <span style="color:#ffd700;">Best Deals</span><br>Online Today
+        </h1>
+        <p style="font-size:18px; color:rgba(255,255,255,0.85); margin-bottom:35px; line-height:1.7;">
+          Discover thousands of products at unbeatable prices. Fast delivery, easy returns, and 24/7 support.
+        </p>
+        <div class="d-flex flex-wrap" style="gap:15px;">
+          <a href="{% url 'store' %}" style="background:#ffd700; color:#1a3c8f; padding:14px 35px; border-radius:30px; font-weight:800; font-size:16px; text-decoration:none; box-shadow:0 4px 15px rgba(255,215,0,0.4);">
+            Shop Now →
+          </a>
+          <a href="{% url 'store' %}" style="background:transparent; color:white; padding:14px 35px; border-radius:30px; font-weight:700; font-size:16px; text-decoration:none; border:2px solid rgba(255,255,255,0.6);">
+            View All Products
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="row mt-5">
+          <div class="col-4 text-center">
+            <h3 style="color:#ffd700; font-weight:800; margin:0;">500+</h3>
+            <small style="color:rgba(255,255,255,0.7);">Products</small>
+          </div>
+          <div class="col-4 text-center" style="border-left:1px solid rgba(255,255,255,0.2); border-right:1px solid rgba(255,255,255,0.2);">
+            <h3 style="color:#ffd700; font-weight:800; margin:0;">10K+</h3>
+            <small style="color:rgba(255,255,255,0.7);">Customers</small>
+          </div>
+          <div class="col-4 text-center">
+            <h3 style="color:#ffd700; font-weight:800; margin:0;">4.9★</h3>
+            <small style="color:rgba(255,255,255,0.7);">Rating</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="col-lg-6 col-md-6 text-center mt-4 mt-md-0" style="z-index:1;">
+        <div style="position:relative; display:inline-block;">
+          <div style="position:absolute;inset:0;background:rgba(255,255,255,0.1);border-radius:30px;transform:rotate(3deg);"></div>
+          <img src="{% static 'images/banners/cover.jpg' %}"
+               style="width:100%; max-width:500px; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,0.3); position:relative;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================= FEATURES STRIP ========================= -->
+<section style="background:#f8f9ff; padding:25px 0; border-bottom:1px solid #e8ecf5;">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-3 col-6 mb-3 mb-md-0">
+        <i class="fa fa-truck fa-2x" style="color:#2557d6;"></i>
+        <p style="margin:8px 0 0; font-weight:700; color:#333;">Free Delivery</p>
+        <small style="color:#888;">On orders over ₹50</small>
+      </div>
+      <div class="col-md-3 col-6 mb-3 mb-md-0">
+        <i class="fa fa-lock fa-2x" style="color:#2557d6;"></i>
+        <p style="margin:8px 0 0; font-weight:700; color:#333;">Secure Payment</p>
+        <small style="color:#888;">100% protected</small>
+      </div>
+      <div class="col-md-3 col-6">
+        <i class="fa fa-refresh fa-2x" style="color:#2557d6;"></i>
+        <p style="margin:8px 0 0; font-weight:700; color:#333;">Easy Returns</p>
+        <small style="color:#888;">30 day return policy</small>
+      </div>
+      <div class="col-md-3 col-6">
+        <i class="fa fa-headphones fa-2x" style="color:#2557d6;"></i>
+        <p style="margin:8px 0 0; font-weight:700; color:#333;">24/7 Support</p>
+        <small style="color:#888;">Always here to help</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= POPULAR PRODUCTS ========================= -->
+<section style="padding:60px 0; background:#fff;">
+  <div class="container">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2 style="font-weight:800; color:#1a3c8f; margin:0;">Popular Products</h2>
+        <p style="color:#888; margin:5px 0 0;">Handpicked just for you</p>
+      </div>
+      <a href="{% url 'store' %}" class="btn" style="background:#2557d6; color:white; border-radius:25px; padding:10px 25px; font-weight:700;">
+        See All →
+      </a>
+    </div>
+
+    <div class="row">
+      {% for product in products %}
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card h-100" style="border:none; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.08); transition:transform 0.3s, box-shadow 0.3s; overflow:hidden;"
+             onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 15px 40px rgba(37,87,214,0.15)';"
+             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)';">
+
+          <!-- Product Image -->
+          <a href="{{ product.get_url }}" style="display:block; overflow:hidden; height:220px; background:#f8f9ff;">
+            <img src="{{ product.images.url }}"
+                 style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s;"
+                 onmouseover="this.style.transform='scale(1.08)'"
+                 onmouseout="this.style.transform='scale(1)'">
+          </a>
+
+          <div class="card-body" style="padding:18px;">
+            <!-- Product Name -->
+            <a href="{{ product.get_url }}" style="color:#222; font-weight:700; font-size:15px; text-decoration:none; display:block; margin-bottom:8px;">
+              {{ product.product_name }}
+            </a>
+
+            <!-- Stars -->
+            <div style="color:#f5a623; margin-bottom:10px; font-size:13px;">
+              <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}"></i>
+              <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}"></i>
+              <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}"></i>
+              <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}"></i>
+              <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}"></i>
+            </div>
+
+            <!-- Price + Button -->
+            <div class="d-flex justify-content-between align-items-center">
+              <span style="font-size:20px; font-weight:800; color:#2557d6;">₹ {{ product.price }}</span>
+              <a href="{{ product.get_url }}"
+                 style="background:#2557d6; color:white; padding:8px 16px; border-radius:20px; font-size:13px; font-weight:700; text-decoration:none;">
+                Buy Now
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= PROMO BANNER ========================= -->
+<!-- ========================= PROMO BANNER ========================= -->
+<section style="position:relative;overflow:hidden;padding:55px 0 50px;background:linear-gradient(135deg,#1a3c8f 0%,#2557d6 60%,#1a8fd1 100%);">
+
+  <!-- Same bg circles as hero -->
+  <div style="position:absolute;top:-80px;right:-60px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,0.06);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-80px;left:-40px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,0.06);pointer-events:none;"></div>
+
+  <div class="container text-center" style="position:relative;z-index:2;">
+
+    <!-- Badge -->
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:30px;padding:6px 20px;margin-bottom:16px;">
+      <span style="width:7px;height:7px;background:#ffd700;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+      <span style="color:white;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;">Limited Time Offer</span>
+    </div>
+
+    <!-- Heading -->
+    <h2 style="font-size:clamp(26px,4vw,40px);font-weight:800;color:white;margin:0 0 10px;line-height:1.15;">
+      Special Offer <span style="color:#ffd700;">This Week!</span> 🎉
+    </h2>
+
+    <!-- Sub -->
+    <p style="font-size:16px;color:rgba(255,255,255,0.85);margin:0 0 26px;">
+      Get up to <strong style="color:#ffd700;">40% off</strong> on selected products — don't miss out!
+    </p>
+
+    <!-- Countdown -->
+    <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.2);border-radius:14px;padding:14px 24px;margin-bottom:28px;">
+      <div style="display:flex;flex-direction:column;align-items:center;min-width:44px;">
+        <span id="cd-hours" style="font-size:30px;font-weight:800;color:#ffd700;line-height:1;">08</span>
+        <span style="font-size:10px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1.5px;margin-top:3px;">Hours</span>
+      </div>
+      <span style="font-size:26px;font-weight:800;color:rgba(255,255,255,0.3);padding-bottom:14px;">:</span>
+      <div style="display:flex;flex-direction:column;align-items:center;min-width:44px;">
+        <span id="cd-mins" style="font-size:30px;font-weight:800;color:#ffd700;line-height:1;">34</span>
+        <span style="font-size:10px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1.5px;margin-top:3px;">Mins</span>
+      </div>
+      <span style="font-size:26px;font-weight:800;color:rgba(255,255,255,0.3);padding-bottom:14px;">:</span>
+      <div style="display:flex;flex-direction:column;align-items:center;min-width:44px;">
+        <span id="cd-secs" style="font-size:30px;font-weight:800;color:#ffd700;line-height:1;">20</span>
+        <span style="font-size:10px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1.5px;margin-top:3px;">Secs</span>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- CTA -->
+    <a href="{% url 'store' %}"
+       style="display:inline-flex;align-items:center;gap:10px;background:#ffd700;color:#1a3c8f;font-weight:800;font-size:17px;padding:15px 44px;border-radius:50px;text-decoration:none;box-shadow:0 5px 20px rgba(255,215,0,0.4);margin-bottom:20px;"
+       onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(255,215,0,0.55)';"
+       onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 5px 20px rgba(255,215,0,0.4)';">
+      Grab the Deal
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+
+    <p style="font-size:12.5px;color:rgba(255,255,255,0.6);margin:0;">
+      🔒 Secure checkout &nbsp;·&nbsp; 🚚 Free delivery &nbsp;·&nbsp; ↩️ Easy returns
+    </p>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  var end = new Date();
+  end.setHours(end.getHours() + 8);
+  end.setMinutes(end.getMinutes() + 34);
+  end.setSeconds(end.getSeconds() + 20);
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function tick() {
+    var diff = Math.max(0, end - new Date());
+    document.getElementById('cd-hours').textContent = pad(Math.floor(diff / 3600000));
+    document.getElementById('cd-mins').textContent  = pad(Math.floor((diff % 3600000) / 60000));
+    document.getElementById('cd-secs').textContent  = pad(Math.floor((diff % 60000) / 1000));
+    if (diff > 0) setTimeout(tick, 1000);
+  }
+  tick();
+})();
+</script>
+
+{% endblock %}

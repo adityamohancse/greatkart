@@ -1,0 +1,85 @@
+{% load static %}
+
+<header class="section-header" style="position:sticky;top:0;z-index:999;box-shadow: 0 2px 10px rgba(0,0,0,0.15);">
+
+<section class="header-main border-bottom" style="background: linear-gradient(135deg, #1a3c8f 0%, #2557d6 100%);">
+  <div class="container">
+    <div class="row align-items-center py-2">
+
+      <!-- Logo -->
+      <div class="col-lg-2 col-md-3 col-6">
+        <a href="{% url 'home' %}" class="brand-wrap">
+          <img class="logo" src="{% static './images/logo.png' %}">
+        </a>
+      </div>
+
+      <!-- Category Dropdown -->
+      <div class="col-lg col-sm col-md col-6 flex-grow-0">
+        <div class="category-wrap dropdown d-inline-block float-right">
+          <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" style="font-weight:600;">
+            <i class="fa fa-bars"></i> All category
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'store' %}">All Products</a>
+            {% for category in links %}
+              <a class="dropdown-item" href="{{ category.get_url }}">{{ category.category_name }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Store Button -->
+      <a href="{% url 'store' %}" class="btn btn-outline-light ml-2" style="font-weight:600;">Store</a>
+
+      <!-- Search -->
+      <div class="col-lg col-md-6 col-sm-12 col">
+        <form action="{% url 'search' %}" class="search" method='GET'>
+          <div class="input-group w-100">
+            <input type="text" class="form-control" placeholder="Search products..." name="keyword" required style="border-radius:25px 0 0 25px; border:none;">
+            <div class="input-group-append">
+              <button class="btn btn-warning" type="submit" style="border-radius:0 25px 25px 0; font-weight:600;">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- User + Cart -->
+      <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
+        <div class="d-flex justify-content-end align-items-center">
+          {% if user.id is None %}
+          <div class="widget-header" style="color:white;">
+            <small class="title" style="color:rgba(255,255,255,0.7);">Welcome guest!</small>
+            <div>
+              <a href="{% url 'login' %}" style="color:white;font-weight:600;">Sign in</a>
+              <span style="color:rgba(255,255,255,0.5);"> | </span>
+              <a href="{% url 'register' %}" style="color:#ffd700;font-weight:600;">Register</a>
+            </div>
+          </div>
+          {% else %}
+          <div class="widget-header" style="color:white;">
+            <small style="color:rgba(255,255,255,0.7);">Welcome {{user.first_name}}!</small>
+            <div>
+              <a href="{% url 'dashboard' %}" style="color:white;font-weight:600;">Dashboard</a>
+              <span style="color:rgba(255,255,255,0.5);"> | </span>
+              <a href="{% url 'logout' %}" style="color:#ffd700;font-weight:600;">Logout</a>
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Cart -->
+          <a href="{% url 'cart' %}" class="widget-header pl-3 ml-3" style="position:relative;">
+            <div class="icon icon-sm rounded-circle" style="background:rgba(255,255,255,0.2); padding:8px; color:white;">
+              <i class="fa fa-shopping-cart fa-lg"></i>
+            </div>
+            <span class="badge badge-pill badge-danger notify" style="position:absolute;top:-5px;right:-5px;">{{cart_count}}</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</header>
