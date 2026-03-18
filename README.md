@@ -63,17 +63,26 @@ python manage.py createsuperuser
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home](screenshots/home.png)
+<p align="center">
+  <img src="greatkart/screenshots/home.png" width="700"/>
+</p>
 
 ### 🛍️ Product Page
-![Product](screenshots/product.png)
+<p align="center">
+  <img src="greatkart/screenshots/product.png" width="700"/>
+</p>
 
 ### 🛒 Cart Page
-![Cart](screenshots/cart.png)
+<p align="center">
+  <img src="greatkart/screenshots/cart.png" width="45%"/>
+  <img src="greatkart/screenshots/cart2.png" width="45%"/>
+</p>
 
 ### 🧾 Billing Page
-![Billing](screenshots/billing.png)
----
+<p align="center">
+  <img src="greatkart/screenshots/billing.png" width="45%"/>
+  <img src="greatkart/screenshots/billing2.png" width="45%"/>
+</p>
 
 ## 🚀 Future Improvements
 
