@@ -1,108 +1,94 @@
-# 🛒 GreatKart – Django E-Commerce Platform
+# 🛒 GreatKart - Django E-Commerce Web Application
 
-A fully functional e-commerce web application built using Django, designed to handle product listings, user authentication, cart management, and order processing.
-
----
-
-## 🚀 Features
-
-* 🔐 User Authentication (Login/Register)
-* 🛍️ Product Listing & Categories
-* 🛒 Add to Cart & Cart Management
-* 📦 Order Placement System
-* 🧾 Checkout Functionality
-* 🖼️ Product Image Gallery
-* ⚙️ Django Admin Panel for Management
+🚀 Live Demo: https://adityamohan.pythonanywhere.com
 
 ---
 
-## 🛠️ Tech Stack
+## 📌 Overview
 
-* **Backend:** Django, Python
-* **Database:** SQLite (can be upgraded to PostgreSQL)
-* **Frontend:** HTML, CSS, Bootstrap
-* **Tools:** Git, GitHub
+GreatKart is a full-featured **E-Commerce Web Application** built using Django.  
+It supports user authentication, product browsing, cart management, and secure checkout.
 
----
-
-## 📁 Project Structure
-
-```
-greatkart/
-├── accounts/
-├── carts/
-├── category/
-├── orders/
-├── store/
-├── templates/
-├── static/
-├── manage.py
-```
+This project demonstrates real-world backend development, authentication flows, and deployment.
 
 ---
 
-## ⚙️ Installation & Setup
+## ✨ Features
 
-```bash
-git clone https://github.com/adityamohancse/greatkart.git
-cd greatkart
-pip install -r requirements.txt
-python manage.py runserver
-```
+- 🔐 User Registration & Login System
+- 🛍️ Product Listing & Categories
+- 🛒 Add to Cart Functionality
+- 💳 Checkout & Billing System
+- 📦 Order Management
+- 📧 Email Verification System
+- 🧑‍💼 Django Admin Panel for Backend Management
+- 🔍 Product Search Feature
+- ⭐ Ratings & Reviews System
 
 ---
 
-## 🔑 Admin Access
+## 🖥️ Live Demo
 
-```bash
-python manage.py createsuperuser
-```
+👉 https://adityamohan.pythonanywhere.com
 
 ---
 
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-<p align="center">
-  <img src="greatkart/screenshots/home.png" width="700"/>
-</p>
+![Home](greatkart/screenshots/home.png)
 
-### 🛍️ Product Page
-<p align="center">
-  <img src="greatkart/screenshots/product.png" width="700"/>
-</p>
+---
+
+### 📦 Product Page
+![Product](greatkart/screenshots/product.png)
+
+---
 
 ### 🛒 Cart Page
-
-<p align="center">
-  <img src="greatkart/screenshots/cart.png" width="45%"/>
-  <img src="greatkart/screenshots/cart2.png" width="45%"/>
-</p>
-
-### 🧾 Billing Page (Step 1)
-<p align="center">
-  <img src="greatkart/screenshots/billing.png" width="600"/>
-</p>
-
-### 🧾 Billing Page (Step 2)
-<p align="center">
-  <img src="greatkart/screenshots/billing2.png" width="600"/>
-</p>
-
-## 🚀 Future Improvements
-
-* Payment Integration (PayPal/Stripe)
-* Product Reviews & Ratings
-* REST API Integration
-* Deployment (PythonAnywhere / AWS)
+![Cart](greatkart/screenshots/cart.png)
 
 ---
 
-## 👨‍💻 Author
-
-**Aditya Mohan Jha**
-B.E. CSE | Django Developer
+### 💳 Billing Page
+![Billing](greatkart/screenshots/billing.png)
 
 ---
 
-⭐ If you like this project, give it a star!
+## 🛠️ Tech Stack
+
+- **Backend:** Django (Python)
+- **Frontend:** HTML, CSS, Bootstrap
+- **Database:** SQLite (Production-ready for PostgreSQL)
+- **Authentication:** Django Auth System
+- **Deployment:** PythonAnywhere
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+# Clone repository
+git clone https://github.com/adityamohancse/greatkart.git
+
+# Navigate into project
+cd greatkart
+
+# Create virtual environment
+python -m venv venv
+
+# Activate environment
+venv\Scripts\activate   # Windows
+source venv/bin/activate  # Linux/Mac
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Apply migrations
+python manage.py migrate
+
+# Create superuser
+python manage.py createsuperuser
+
+# Run server
+python manage.py runserver
