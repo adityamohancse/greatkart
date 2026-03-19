@@ -6,10 +6,11 @@
 
 ## 📌 Overview
 
-GreatKart is a full-featured **E-Commerce Web Application** built using Django.  
-It supports user authentication, product browsing, cart management, and secure checkout.
+GreatKart is a **production-ready e-commerce backend system** built using Django and Django REST Framework (DRF). The project focuses on designing scalable backend architecture and implementing core functionalities such as authentication, product management, cart operations, and order processing.
 
-This project demonstrates real-world backend development, authentication flows, and deployment.
+The system demonstrates practical backend engineering concepts including RESTful API design, database optimization using filtering and pagination, and a modular application structure for maintainability.
+
+This project reflects a strong foundation in **backend development, API design, and system scalability**, aligned with industry-level software engineering practices.
 
 ---
 
